@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Launcher Icon Background Color -->
+    <color name="ic_launcher_background">#3BB3DB</color>
+
+    <!-- Mathematics Intro Color Res -->
+    <color name="intro_background">#131313</color>
+    <color name="mathematics_text">#fff</color>
+    <color name="neon_blue">#00ffff</color>
+    <color name="neon_green">#00ff00</color>
+    <color name="neon_yellow">#ffff00</color>
+    <color name="neon_orange">#fa0</color>
+    <color name="neon_red">#f00</color>
+
+    <!-- Mathematics Settings Theme Color Res -->
+    <color name="light_bg">#fff</color>
+    <color name="dark_bg">#131313</color>
+    <color name="ocean_blue_bg">#0177BF</color>
+    <color name="light_pink_bg">#ffb6c1</color>
+
+    <color name="menu_blue_bar">#00ffff</color>
+    <color name="menu_green_bar">#00ff00</color>
+    <color name="menu_yellow_bar">#ffff00</color>
+    <color name="menu_orange_bar">#fa0</color>
+    <color name="menu_red_bar">#f00</color>
+
+    <color name="check_border_color">#B2D830</color>
+    <color name="silver_line_between_numpads">#c0c0c0</color>
+
+    <!-- Snake Color Res -->
+    <color name="background_snake_begin">#7dd6cc</color>
+    <color name="background_snake_screen">#585858</color>
+    <color name="background_snake_input">#00a8f3</color>
+    <color name="controllers">#ffca18</color>
+    <color name="food">#FF4081</color>
+    <color name="snake">@android:color/white</color>
+    <color name="text">@android:color/white</color>
+</resources>
