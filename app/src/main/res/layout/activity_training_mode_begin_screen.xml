@@ -9,11 +9,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        tools:background="@color/neon_orange">
+        android:background="@color/neon_orange">
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:src="@drawable/ic_back"/>
@@ -27,26 +27,129 @@
 
     </RelativeLayout>
 
+    <!-- TODO 10 buttons in main screen -->
+    <!-- TODO fix the margin of the buttons and space the buttons even -->
     <!-- contents of training mode main (begin) screen-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:background="@color/dark_bg">
+        android:background="@color/dark_bg">
 
-        <!-- Button 1 -->
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginHorizontal="20dp"
-            tools:background="@color/neon_orange"
-            android:textSize="20sp"
-            android:text="@string/assigning_numbers_their_places"/>
+            android:orientation="vertical">
 
+            <Button
+                android:onClick="button1"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/assigning_numbers_their_places"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
 
-        <!-- TODO 10 buttons in main screen -->
-        <!-- TODO fix the margin of the buttons and space the buttons even-->
+            <Button
+                android:onClick="button2"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/reading_and_writing_absolute_value"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button3"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/added_signed_numbers"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button4"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/making_a_difference_with_signed_numbers"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button5"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/multiplying_signed_numbers"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button6"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/dividing_signed_numbers"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button7"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/grouping_symbols"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button8"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/distributive_property"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button9"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/associative_rule"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+
+            <Button
+                android:onClick="button10"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginHorizontal="20dp"
+                android:text="@string/commutative_rule"
+                android:textSize="20sp"
+                android:background="@color/neon_orange"/>
+        </LinearLayout>
     </ScrollView>
 </LinearLayout>
