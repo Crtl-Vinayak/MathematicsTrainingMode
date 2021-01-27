@@ -31,6 +31,10 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
         _linearLayout = findViewById(R.id.level_selection_exercise_one_contents);
         _linearLayout.setWeightSum(34);
 
+        /** TODO fix the margins of the buttons, and remove the old code
+         *  TODO also make it for the other 9 exercises
+         *  TODO when you select the level, you go to the next activity and half of the activity screen is the question and in the middle is the time you got to answer the question. */
+
 //        LinearLayout rowtest = new LinearLayout(this);
 //        rowtest.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 //        rowtest.setOrientation(LinearLayout.HORIZONTAL);
