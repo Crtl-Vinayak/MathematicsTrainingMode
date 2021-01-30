@@ -89,22 +89,29 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
             _rowOfLevels[i].addView(_buttonLevel[(i * 3) + 1]);
             _rowOfLevels[i].addView(_buttonLevel[(i * 3) + 2]);
 
+            final int finalI = i;
             _buttonLevel[(i * 3)].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(LevelSelectionExerciseOne.this, ExerciseOne.class);
+                    intent.putExtra("levelnum", (finalI * 3) + 1);
+                    startActivity(intent);
                 }
             });
             _buttonLevel[(i * 3) + 1].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(LevelSelectionExerciseOne.this, ExerciseOne.class);
+                    intent.putExtra("levelnum", (finalI * 3) + 2);
+                    startActivity(intent);
                 }
             });
             _buttonLevel[(i * 3) + 2].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-
+                    Intent intent = new Intent(LevelSelectionExerciseOne.this, ExerciseOne.class);
+                    intent.putExtra("levelnum", (finalI * 3) + 3);
+                    startActivity(intent);
                 }
             });
         }
@@ -124,7 +131,9 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
         _buttonLevel[99].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(LevelSelectionExerciseOne.this, ExerciseOne.class);
+                intent.putExtra("levelnum", 100);
+                startActivity(intent);
             }
         });
 

@@ -18,5 +18,8 @@
         <activity android:name=".LevelSelectionExerciseOne"
             android:screenOrientation="sensorPortrait">
         </activity>
+        <activity android:name=".ExerciseOne"
+            android:screenOrientation="sensorPortrait">
+        </activity>
     </application>
 </manifest>
