@@ -17,7 +17,7 @@ public class ExerciseOne extends AppCompatActivity {
     // TODO make the questions and set the line in the middle of the screen...
     // TODO line is made out 60 (seconds) Linear layouts with the gray background inside a parent layout, in this case linear layout...
 
-    final int totalSec = 5;
+    final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 
     @Override
@@ -31,7 +31,6 @@ public class ExerciseOne extends AppCompatActivity {
         buttonIntents();
 
         int levelnum = getIntent().getIntExtra("levelnum", 1);
-        System.out.println("level number = " + levelnum);
         TextView actionbarTitle = findViewById(R.id.action_bar_title_exercise_one);
         actionbarTitle.setText(getApplicationContext().getString(R.string.assigning_numbers_their_places) + ". Level: " + levelnum + " / " + 100);
 
@@ -78,7 +77,6 @@ public class ExerciseOne extends AppCompatActivity {
                     handler.post(new Runnable(){
                         public void run() {
                             if ((int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000)) >= 1) {
-                                System.out.println(startTime);
                                 _sixtyOfALine[(int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000))].setVisibility(View.INVISIBLE);
                                 tvTime.setText("" + (int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000)));
                             } else {
