@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -16,7 +17,7 @@ public class ExerciseOne extends AppCompatActivity {
     // TODO make the questions and set the line in the middle of the screen...
     // TODO line is made out 60 (seconds) Linear layouts with the gray background inside a parent layout, in this case linear layout...
 
-    final int totalSec = 60;
+    final int totalSec = 5;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 
     @Override
@@ -52,8 +53,21 @@ public class ExerciseOne extends AppCompatActivity {
 
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
-            private long startTime = System.currentTimeMillis();
+            long startTime = System.currentTimeMillis();
             public void run() {
+
+                // button a (and b too in the future...) resets the (line) timer.
+                Button butA = findViewById(R.id.button_A);
+                butA.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        startTime = System.currentTimeMillis() - 1000;
+                        for (int i = 0; i < totalSec; i++) {
+                            _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                        }
+                    }
+                });
+
                 while (!isTimerDone[0]) {
                     try {
                         Thread.sleep(1000);
@@ -64,6 +78,7 @@ public class ExerciseOne extends AppCompatActivity {
                     handler.post(new Runnable(){
                         public void run() {
                             if ((int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000)) >= 1) {
+                                System.out.println(startTime);
                                 _sixtyOfALine[(int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000))].setVisibility(View.INVISIBLE);
                                 tvTime.setText("" + (int) (totalSec - ((System.currentTimeMillis() - startTime) / 1000)));
                             } else {
