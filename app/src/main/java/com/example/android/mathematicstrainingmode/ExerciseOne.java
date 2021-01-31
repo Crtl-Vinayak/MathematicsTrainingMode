@@ -20,7 +20,7 @@ public class ExerciseOne extends AppCompatActivity {
     // TODO make the questions and set the line in the middle of the screen...
     // TODO line is made out 60 (seconds) Linear layouts with the gray background inside a parent layout, in this case linear layout...
 
-    final int totalSec = 5;
+    final int totalSec = 3;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 //    private Handler _handler = new Handler();
 //    private int _counter = 60;
@@ -61,6 +61,7 @@ public class ExerciseOne extends AppCompatActivity {
 
         final TextView tvTime = findViewById(R.id.testtv);
         final boolean[] isTimerDone = {false};
+        final int[] stop = {0};
 
         final Handler handler = new Handler();
         Runnable runnable = new Runnable() {
@@ -81,8 +82,11 @@ public class ExerciseOne extends AppCompatActivity {
                             } else {
                                 isTimerDone[0] = true;
                                 if (isTimerDone[0]) {
-                                    Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
-                                    startActivity(intent);
+                                    if (stop[0] == 0) {
+                                        Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
+                                        startActivity(intent);
+                                        stop[0]++;
+                                    }
                                 }
                             }
                         }
