@@ -1,11 +1,9 @@
 package com.example.android.mathematicstrainingmode;
 
 import android.content.Intent;
-import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Display;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -13,17 +11,13 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
 public class ExerciseOne extends AppCompatActivity {
 
     // TODO make the questions and set the line in the middle of the screen...
     // TODO line is made out 60 (seconds) Linear layouts with the gray background inside a parent layout, in this case linear layout...
 
-    final int totalSec = 3;
+    final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
-//    private Handler _handler = new Handler();
-//    private int _counter = 60;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,13 +45,6 @@ public class ExerciseOne extends AppCompatActivity {
             _sixtyOfALine[i].setBackgroundColor(getApplicationContext().getResources().getColor(R.color.locked_button));
             line.addView(_sixtyOfALine[i]);
         }
-
-//        try {
-//            _handler.removeCallbacks(hMyTimeTask);
-//            _handler.postDelayed(hMyTimeTask, 1000);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
 
         final TextView tvTime = findViewById(R.id.testtv);
         final boolean[] isTimerDone = {false};
@@ -97,17 +84,6 @@ public class ExerciseOne extends AppCompatActivity {
         new Thread(runnable).start();
     }
 
-//    private Runnable hMyTimeTask = new Runnable() {
-//        @Override
-//        public void run() {
-//            _counter--;
-//            _sixtyOfALine[_counter].setVisibility(View.INVISIBLE);
-//            if (_counter == 0) {
-//                _handler.removeCallbacks(hMyTimeTask);
-//            }
-//        }
-//    };
-
     private void buttonIntents() {
         findViewById(R.id.exercise_one_back_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -117,34 +93,4 @@ public class ExerciseOne extends AppCompatActivity {
             }
         });
     }
-
-//    private Thread _thread = null;
-//    private volatile boolean _isRunning;
-//
-//    private final long MILLIS_PER_SECOND = 1000;
-//    private final short FPS = 1;
-//
-//    @Override
-//    public void run() {
-//
-//    }
-//
-//    @Override
-//    protected void onPause() {
-//        super.onPause();
-//        _isRunning = false;
-//        try {
-//            _thread.join();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//    }
-//
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//        _isRunning = true;
-//        _thread = new Thread(this);
-//        _thread.start();
-//    }
 }
