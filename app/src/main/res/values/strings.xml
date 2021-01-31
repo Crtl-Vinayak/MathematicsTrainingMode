@@ -46,4 +46,7 @@
     <!-- 8 --> <string name="distributive_property">Distributive property</string>
     <!-- 9 --> <string name="associative_rule">Associative rule</string>
     <!-- 10 --> <string name="commutative_rule">Commutative rule</string>
+
+    <!-- Assigning numbers their place -->
+    <string name="which_is_larger">Which is larger, </string>
 </resources>
