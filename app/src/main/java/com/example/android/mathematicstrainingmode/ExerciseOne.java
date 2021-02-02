@@ -124,16 +124,16 @@ public class ExerciseOne extends AppCompatActivity {
         new Thread(runnable).start();
     }
 
+    // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
+    
     private String mathematicsQuestions(int levelNum) {
-        // ------------------- <Make Mathematical Questions! (begins) -----------------
-
         String question = "Which is larger, ";
-        boolean is_b_right = false;
         double num1, num2;
         double min, max;
+        boolean isNegativeNum1, isNegativeNum2;
 
         if (levelNum >= 1 && levelNum < 20) {
-            // fase 1 (natural numbers)
+            // phase 1 (natural numbers)
 
             min = levelNum;
             max = levelNum * 2 + 1;
@@ -153,27 +153,108 @@ public class ExerciseOne extends AppCompatActivity {
             DecimalFormat df = new DecimalFormat("###.#");
             question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
 
-            System.out.println("question: " + question);
-
         } else if (levelNum >= 20 && levelNum < 40) {
-            // fase 2 (integers)
+            // phase 2 (integers)
+
+            // TODO fix this phase 2...
+
+//            min = levelNum;
+//            max = levelNum * 2 + 1;
+//
+//            if ((int) (Math.random() * (max - min + 1) + min) % 2 == 0) {
+//                isNegativeNum1 = true;
+//                num1 = (Math.random() * (max - min + 1) + min) * -1;
+//            } else {
+//                isNegativeNum1 = false;
+//                num1 = Math.random() * (max - min + 1) + min;
+//            }
+//
+//            if ((int) (Math.random() * (max - min + 1) + min) % 2 == 1) {
+//                isNegativeNum2 = true;
+//                num2 = (Math.random() * (max - min + 1) + min) * -1;
+//            } else {
+//                isNegativeNum2 = false;
+//                num2 = Math.random() * (max - min + 1) + min;
+//            }
+//
+//            if (num1 == num2) {
+//                if (isNegativeNum1) {
+//                    num1 = Math.random() * (max - min + 1) + min;
+//                } else {
+//                    num1 = (Math.random() * (max - min + 1) + min) * -1;
+//                }
+//                if (isNegativeNum2) {
+//                    num2 = Math.random() * (max - min + 1) + min;
+//                } else {
+//                    num2 = (Math.random() * (max - min + 1) + min) * -1;
+//                }
+//                if (num1 == num2) {
+//                    num2 -= (min - 5);
+//                    num1 += 5;
+//                }
+//            }
+//
+//            checkAnswer(num1, num2);
+//
+//            DecimalFormat df = new DecimalFormat("###.#");
+//            question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
 
         } else if (levelNum >= 40 && levelNum < 60) {
-            // fase 3 (decimals)
+            // phase 3 (decimals)
+
+            min = levelNum;
+            max = levelNum * 2 + 1;
+
+            if ((Math.random() * (10 - 0 + 1) + 0) % 2 == 0) {
+                isNegativeNum1 = true;
+                num1 = (Math.random() * (max - min + 1) + min) * -1;
+            } else {
+                isNegativeNum1 = false;
+                num1 = Math.random() * (max - min + 1) + min;
+            }
+
+            if ((Math.random() * (10 - 0 + 1) + 0) % 2 == 1) {
+                isNegativeNum2 = true;
+                num2 = (Math.random() * (max - min + 1) + min) * -1;
+            } else {
+                isNegativeNum2 = false;
+                num2 = Math.random() * (max - min + 1) + min;
+            }
+
+            if (num1 == num2) {
+                if (isNegativeNum1) {
+                    num1 = Math.random() * (max - min + 1) + min;
+                } else {
+                    num1 = (Math.random() * (max - min + 1) + min) * -1;
+                }
+                if (isNegativeNum2) {
+                    num2 = Math.random() * (max - min + 1) + min;
+                } else {
+                    num2 = (Math.random() * (max - min + 1) + min) * -1;
+                }
+                if (num1 == num2) {
+                    num2 -= (min - 5);
+                    num1 += 5;
+                }
+            }
+
+            checkAnswer(num1, num2);
+
+            DecimalFormat df = new DecimalFormat("#.#");
+            question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
 
         } else if (levelNum >= 60 && levelNum < 80) {
-            // fase 4 (fractions)
+            // phase 4 (fractions)
 
         } else if (levelNum >= 80 && levelNum < 100) {
-            // fase 5 (mix of all 4 fases)
+            // phase 5 (mix of all 4 phases)
 
         } else if (levelNum == 100) {
-            // fase 6 (final fase - all fases but on max difficulty)
+            // phase 6 (final phase - all phases but on max difficulty)
 
         }
 
         return question;
-        // ------------------- <Make Mathematical Questions! (ends) -----------------
     }
 
     private boolean checkAnswer(double num1, double num2) {
@@ -185,7 +266,9 @@ public class ExerciseOne extends AppCompatActivity {
             return false;
         }
     }
-
+    
+    // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
+    
     private void buttonIntents() {
         findViewById(R.id.exercise_one_back_button).setOnClickListener(new View.OnClickListener() {
             @Override
