@@ -13,12 +13,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class ExerciseOne extends AppCompatActivity {
 
     // TODO make the questions...
 
     final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
+
+    boolean isAbig;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,37 +34,9 @@ public class ExerciseOne extends AppCompatActivity {
 
         buttonIntents();
 
-        int levelNum = getIntent().getIntExtra("levelnum", 1);
+        final int levelNum = getIntent().getIntExtra("levelnum", 1);
         TextView actionbarTitle = findViewById(R.id.action_bar_title_exercise_one);
         actionbarTitle.setText(getApplicationContext().getString(R.string.assigning_numbers_their_places) + ". Level: " + levelNum + " / " + 100);
-
-        // ------------------- <Make Mathematical Questions! (begins) -----------------
-
-        String question = "Which is larger, ";
-        double num1, num2;
-
-        if (levelNum >= 1 && levelNum < 20) {
-            // fase 1 (natural numbers)
-            num1 = Math.random() + 1;
-            num2 = Math.random() + 1;
-        } else if (levelNum >= 20 && levelNum < 40) {
-            // fase 2 (integers)
-
-        } else if (levelNum >= 40 && levelNum < 60) {
-            // fase 3 (decimals)
-
-        } else if (levelNum >= 60 && levelNum < 80) {
-            // fase 4 (fractions)
-
-        } else if (levelNum >= 80 && levelNum < 100) {
-            // fase 5 (mix of all 4 fases)
-
-        } else if (levelNum == 100) {
-            // fase 6 (final fase - all fases but on max difficulty)
-
-        }
-
-        // ------------------- <Make Mathematical Questions! (ends) -----------------
 
         //line code
         LinearLayout line = findViewById(R.id.exercise_one_line);
@@ -75,6 +51,7 @@ public class ExerciseOne extends AppCompatActivity {
         }
 
         final TextView tvTime = findViewById(R.id.question);
+        tvTime.setText(mathematicsQuestions(levelNum));
         final boolean[] isTimerDone = {false};
         final int[] stop = {0};
 
@@ -83,11 +60,16 @@ public class ExerciseOne extends AppCompatActivity {
             long startTime = System.currentTimeMillis();
             public void run() {
 
-                // button a (and b too in the future...) resets the (line) timer.
                 Button butA = findViewById(R.id.button_A);
                 butA.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        if (!isAbig) {
+                            Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
+                            startActivity(intent);
+                        } else {
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                        }
                         startTime = System.currentTimeMillis() - 1000;
                         for (int i = 0; i < totalSec; i++) {
                             _sixtyOfALine[i].setVisibility(View.VISIBLE);
@@ -99,6 +81,12 @@ public class ExerciseOne extends AppCompatActivity {
                 butB.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        if (isAbig) {
+                            Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
+                            startActivity(intent);
+                        } else {
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                        }
                         startTime = System.currentTimeMillis() - 1000;
                         for (int i = 0; i < totalSec; i++) {
                             _sixtyOfALine[i].setVisibility(View.VISIBLE);
@@ -134,6 +122,68 @@ public class ExerciseOne extends AppCompatActivity {
             }
         };
         new Thread(runnable).start();
+    }
+
+    private String mathematicsQuestions(int levelNum) {
+        // ------------------- <Make Mathematical Questions! (begins) -----------------
+
+        String question = "Which is larger, ";
+        boolean is_b_right = false;
+        double num1, num2;
+        double min, max;
+
+        if (levelNum >= 1 && levelNum < 20) {
+            // fase 1 (natural numbers)
+
+            min = levelNum;
+            max = levelNum * 2 + 1;
+            num1 = (int) (Math.random() * (max - min + 1) + min);
+            num2 = (int) (Math.random() * (max - min + 1) + min);
+            if (num1 == num2) {
+                num1 = (int) (Math.random() * (max - min + 1) + min);
+                num2 = (int) (Math.random() * (max - min + 1) + min);
+                if (num1 == num2) {
+                    num2 -= min;
+                    num1 += 1;
+                }
+            }
+
+            checkAnswer(num1, num2);
+
+            DecimalFormat df = new DecimalFormat("###.#");
+            question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+
+            System.out.println("question: " + question);
+
+        } else if (levelNum >= 20 && levelNum < 40) {
+            // fase 2 (integers)
+
+        } else if (levelNum >= 40 && levelNum < 60) {
+            // fase 3 (decimals)
+
+        } else if (levelNum >= 60 && levelNum < 80) {
+            // fase 4 (fractions)
+
+        } else if (levelNum >= 80 && levelNum < 100) {
+            // fase 5 (mix of all 4 fases)
+
+        } else if (levelNum == 100) {
+            // fase 6 (final fase - all fases but on max difficulty)
+
+        }
+
+        return question;
+        // ------------------- <Make Mathematical Questions! (ends) -----------------
+    }
+
+    private boolean checkAnswer(double num1, double num2) {
+        if (num1 > num2) {
+            isAbig = true;
+            return true;
+        } else {
+            isAbig = false;
+            return false;
+        }
     }
 
     private void buttonIntents() {

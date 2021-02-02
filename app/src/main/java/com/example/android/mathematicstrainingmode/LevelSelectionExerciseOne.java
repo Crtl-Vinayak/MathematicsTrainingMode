@@ -38,9 +38,7 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
         _linearLayout.setWeightSum(34);
 
         /** TODO make working buttons...
-         *  TODO also make it for the other 9 exercises
-         *  TODO when you select the level, you go to the next activity
-         *  TODO and half of the activity screen is the question and in the middle is the time you got to answer the question. */
+         *  TODO also make it for the other 9 exercises */
 
         for (int i = 0; i < 33; i++) {
             System.out.println("level: " + (i + 1));
