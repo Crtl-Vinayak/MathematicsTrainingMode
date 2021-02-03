@@ -41,7 +41,6 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
          *  TODO also make it for the other 9 exercises */
 
         for (int i = 0; i < 33; i++) {
-            System.out.println("level: " + (i + 1));
             _rowOfLevels[i] = new LinearLayout(this);
             _rowOfLevels[i].setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, 1));
             _rowOfLevels[i].setWeightSum(3);
@@ -113,7 +112,6 @@ public class LevelSelectionExerciseOne extends AppCompatActivity {
                 }
             });
         }
-        System.out.println("level: " + 34);
         _rowOfLevels[33] = new LinearLayout(this);
         _rowOfLevels[33].setWeightSum(1);
         _rowOfLevels[33].setOrientation(LinearLayout.HORIZONTAL);

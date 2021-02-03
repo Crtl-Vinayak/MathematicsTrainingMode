@@ -54,6 +54,7 @@
                 android:text="Which is larger, "
                 android:textSize="15sp"/>
 
+
         </LinearLayout>
         <LinearLayout
             android:id="@+id/exercise_one_line"
