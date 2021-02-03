@@ -26,6 +26,7 @@ public class ExerciseOne extends AppCompatActivity {
     Thread thread;
 
     boolean isBackButtonPressed = false;
+    boolean isWrongAnswered = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,7 @@ public class ExerciseOne extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (!isAbig) {
+                            isWrongAnswered = true;
                             Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
                             startActivity(intent);
                         } else {
@@ -85,6 +87,7 @@ public class ExerciseOne extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         if (isAbig) {
+                            isWrongAnswered = true;
                             Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
                             startActivity(intent);
                         } else {
@@ -111,7 +114,7 @@ public class ExerciseOne extends AppCompatActivity {
                             } else {
                                 isTimerDone[0] = true;
                                 if (isTimerDone[0]) {
-                                    if (stop[0] == 0 && isBackButtonPressed == false) {
+                                    if (stop[0] == 0 && isBackButtonPressed == false && isWrongAnswered == false) {
                                         Intent intent = new Intent(ExerciseOne.this, LevelSelectionExerciseOne.class);
                                         startActivity(intent);
                                         stop[0]++;
@@ -172,7 +175,6 @@ public class ExerciseOne extends AppCompatActivity {
 
             min = levelNum;
             max = levelNum * 2 + 2;
-
             num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
             num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
             if (num1 == num2) {
@@ -192,39 +194,21 @@ public class ExerciseOne extends AppCompatActivity {
         } else if (levelNum >= 40 && levelNum < 60) {
             // phase 3 (decimals)
 
+            int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+            int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+            if (ranNegPosNum1 == 2) {ranNegPosNum1 = -1; }
+            if (ranNegPosNum2 == 2) {ranNegPosNum2 = -1; }
+
             min = levelNum;
-            max = levelNum * 2 + 1;
-
-            if ((Math.random() * (10 - 0 + 1) + 0) % 2 == 0) {
-                isNegativeNum1 = true;
-                num1 = (Math.random() * (max - min + 1) + min) * -1;
-            } else {
-                isNegativeNum1 = false;
-                num1 = Math.random() * (max - min + 1) + min;
-            }
-
-            if ((Math.random() * (10 - 0 + 1) + 0) % 2 == 1) {
-                isNegativeNum2 = true;
-                num2 = (Math.random() * (max - min + 1) + min) * -1;
-            } else {
-                isNegativeNum2 = false;
-                num2 = Math.random() * (max - min + 1) + min;
-            }
-
+            max = levelNum * 2 + 2;
+            num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+            num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
             if (num1 == num2) {
-                if (isNegativeNum1) {
-                    num1 = Math.random() * (max - min + 1) + min;
-                } else {
-                    num1 = (Math.random() * (max - min + 1) + min) * -1;
-                }
-                if (isNegativeNum2) {
-                    num2 = Math.random() * (max - min + 1) + min;
-                } else {
-                    num2 = (Math.random() * (max - min + 1) + min) * -1;
-                }
+                num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+                num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
                 if (num1 == num2) {
-                    num2 -= (min - 5);
-                    num1 += 5;
+                    num2 -= min;
+                    num1 += 2;
                 }
             }
 
