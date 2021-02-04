@@ -19,7 +19,7 @@ public class ExerciseOne extends AppCompatActivity {
 
     // TODO make the questions...
 
-    final int totalSec = 5;
+    final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 
     boolean isAbig;
@@ -170,8 +170,8 @@ public class ExerciseOne extends AppCompatActivity {
 
             int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
             int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
-            if (ranNegPosNum1 == 2) {ranNegPosNum1 = -1; }
-            if (ranNegPosNum2 == 2) {ranNegPosNum2 = -1; }
+            if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+            if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
 
             min = levelNum;
             max = levelNum * 2 + 2;
@@ -196,29 +196,28 @@ public class ExerciseOne extends AppCompatActivity {
 
             int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
             int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
-            if (ranNegPosNum1 == 2) {ranNegPosNum1 = -1; }
-            if (ranNegPosNum2 == 2) {ranNegPosNum2 = -1; }
+            if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+            if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
 
             min = levelNum;
             max = levelNum * 2 + 2;
             num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
             num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
+
             if (num1 == num2) {
                 num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
                 num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
                 if (num1 == num2) {
                     num2 -= min;
-                    num1 += 2;
+                    num1 += 5;
                 }
             }
 
             checkAnswer(num1, num2);
-
-            DecimalFormat df = new DecimalFormat("#.#");
-            question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+            question += ("A = " + num1 + " or B = " + num2);
 
         } else if (levelNum >= 60 && levelNum < 80) {
-            // phase 4 (fractions)
+            // phase 4 (fractions) e.g. 3 1/4 = 3.25
 
         } else if (levelNum >= 80 && levelNum < 100) {
             // phase 5 (mix of all 4 phases)
