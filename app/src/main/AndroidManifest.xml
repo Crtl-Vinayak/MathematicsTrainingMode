@@ -15,16 +15,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LevelSelectionExerciseOne"
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseOne"
             android:screenOrientation="sensorPortrait">
         </activity>
-        <activity android:name=".ExerciseOne"
+        <activity android:name=".ExerciseNum.ExerciseOne"
             android:screenOrientation="sensorPortrait">
         </activity>
-        <activity android:name=".LevelSelectionExerciseTwo"
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseTwo"
             android:screenOrientation="sensorPortrait">
         </activity>
-        <activity android:name=".ExerciseTwo"
+        <activity android:name=".ExerciseNum.ExerciseTwo"
             android:screenOrientation="sensorPortrait">
         </activity>
     </application>

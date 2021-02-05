@@ -7,6 +7,9 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseOne;
+import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseTwo;
+
 public class TrainingModeBeginScreen extends AppCompatActivity {
 
     @Override
