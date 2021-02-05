@@ -85,13 +85,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "1";
                         tvTime.setText(tvTime.getText() + "1");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -100,13 +101,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "2";
                         tvTime.setText(tvTime.getText() + "2");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -115,13 +117,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "3";
                         tvTime.setText(tvTime.getText() + "3");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -130,13 +133,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "4";
                         tvTime.setText(tvTime.getText() + "4");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -145,13 +149,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "5";
                         tvTime.setText(tvTime.getText() + "5");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -160,13 +165,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "6";
                         tvTime.setText(tvTime.getText() + "6");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -175,13 +181,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "7";
                         tvTime.setText(tvTime.getText() + "7");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -190,13 +197,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "8";
                         tvTime.setText(tvTime.getText() + "8");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -205,13 +213,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "9";
                         tvTime.setText(tvTime.getText() + "9");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -220,13 +229,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "0";
                         tvTime.setText(tvTime.getText() + "0");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -235,13 +245,14 @@ public class ExerciseTwo extends AppCompatActivity {
                     public void onClick(View view) {
                         userInput += "-";
                         tvTime.setText(tvTime.getText() + "-");
-                        if (answer == userInput) {
+                        if (userInput.equals(answer)) {
                             startTime = System.currentTimeMillis() - 1000;
                             for (int i = 0; i < totalSec; i++) {
                                 _sixtyOfALine[i].setVisibility(View.VISIBLE);
                             }
+                            tvTime.setText(mathematicsQuestions(levelNum));
+                            userInput = "";
                         }
-                        testUserInputAnswer();
                     }
                 });
 
@@ -291,11 +302,6 @@ public class ExerciseTwo extends AppCompatActivity {
         finish();
     }
 
-    private void testUserInputAnswer() {
-        System.out.println(userInput + " x " + answer);
-        System.out.println(userInput == answer);
-    }
-
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
     private String mathematicsQuestions(int levelNum) {
@@ -327,8 +333,7 @@ public class ExerciseTwo extends AppCompatActivity {
     private void checkAnswer(int num, int ranNegPosSign1) {
         Math.abs(num);
         if (ranNegPosSign1 == 2) { num *= -1; }
-        System.out.println("answer = " + num);
-        answer = num + "";
+        answer = "" + num;
     }
 
     // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
