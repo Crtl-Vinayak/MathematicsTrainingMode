@@ -33,7 +33,7 @@ public class ExerciseThree extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_exercise_two);
+        setContentView(R.layout.activity_exercise_three);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             getWindow().setNavigationBarColor(getApplicationContext().getResources().getColor(R.color.dark_bg));
         }
@@ -383,26 +383,30 @@ public class ExerciseThree extends AppCompatActivity {
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
     private String mathematicsQuestions(int levelNum) {
+
+        // TODO make exercise_three questions...
+
         String question = "";
-        int num;
+        int num1, num2;
         double min, max;
 
         if (levelNum >= 1 && levelNum <= 100) {
-            // phase 2 (integers)
 
             min = levelNum;
-            max = levelNum * 5 + 15;
-            num = (int) (Math.random() * (max - min + 1) + min);
+            max = levelNum * 2 + 2;
+            num1 = (int) (Math.random() * (max - min + 1) + min);
+            num2 = (int) (Math.random() * (max - min + 1) + min);
 
             int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
             int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
 
-            String neg1, neg2;
-            if (ranNegPosNum1 == 2) { neg1 = "-"; } else { neg1 = ""; }
-            if (ranNegPosNum2 == 2) { neg2 = "-"; } else { neg2 = ""; }
 
-            checkAnswer(num, ranNegPosNum1);
-            question = neg1 + "|" + neg2 + num + "| = ";
+            String neg1, neg2;
+            if (ranNegPosNum1 == 2) { neg1 = "(-"; } else { neg1 = ""; }
+            if (ranNegPosNum2 == 2) { neg2 = "(-"; } else { neg2 = ""; }
+
+//            checkAnswer(num, ranNegPosNum1);
+//            question = neg1 + "|" + neg2 + num + "| = ";
         }
 
         return question;
