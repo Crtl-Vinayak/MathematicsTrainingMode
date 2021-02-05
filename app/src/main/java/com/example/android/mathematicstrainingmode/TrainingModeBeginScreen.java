@@ -28,5 +28,12 @@ public class TrainingModeBeginScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseTwo.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -21,5 +21,11 @@
         <activity android:name=".ExerciseOne"
             android:screenOrientation="sensorPortrait">
         </activity>
+        <activity android:name=".LevelSelectionExerciseTwo"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseTwo"
+            android:screenOrientation="sensorPortrait">
+        </activity>
     </application>
 </manifest>

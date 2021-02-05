@@ -17,8 +17,6 @@ import java.text.DecimalFormat;
 
 public class ExerciseOne extends AppCompatActivity {
 
-    // TODO make the questions...
-
     final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 
