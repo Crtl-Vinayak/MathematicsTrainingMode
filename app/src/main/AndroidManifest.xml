@@ -27,5 +27,53 @@
         <activity android:name=".ExerciseNum.ExerciseTwo"
             android:screenOrientation="sensorPortrait">
         </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseThree"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseThree"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseFour"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseFour"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseFive"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseFive"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseSix"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseSix"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseSeven"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseSeven"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseEight"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseEight"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseNine"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseNine"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".LevelSelectionExerciseNum.LevelSelectionExerciseTen"
+            android:screenOrientation="sensorPortrait">
+        </activity>
+        <activity android:name=".ExerciseNum.ExerciseTen"
+            android:screenOrientation="sensorPortrait">
+        </activity>
     </application>
 </manifest>
