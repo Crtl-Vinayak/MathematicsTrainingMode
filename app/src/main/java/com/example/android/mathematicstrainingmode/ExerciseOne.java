@@ -142,7 +142,9 @@ public class ExerciseOne extends AppCompatActivity {
         String question = "Which is larger, ";
         double num1, num2;
         double min, max;
-        boolean isNegativeNum1, isNegativeNum2;
+        int numerator1, numerator2;
+        int denominator1,  denominator2;
+        int minNumerator, maxNumerator;
 
         if (levelNum >= 1 && levelNum < 20) {
             // phase 1 (natural numbers)
@@ -218,6 +220,32 @@ public class ExerciseOne extends AppCompatActivity {
 
         } else if (levelNum >= 60 && levelNum < 80) {
             // phase 4 (fractions) e.g. 3 1/4 = 3.25
+
+            minNumerator = levelNum - 59;
+            maxNumerator = levelNum - 59 + 5;
+
+            numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+            numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+            denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+            denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+            if (denominator1 == 0) { denominator1++; }
+            if (denominator2 == 0) { denominator2++; }
+            double fraction1 = (double) (numerator1 / denominator1);
+            double fraction2 = (double) (numerator2 / denominator2);
+
+            while (fraction1 == fraction2) {
+                numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                if (denominator1 == 0) { denominator1++; }
+                if (denominator2 == 0) { denominator2++; }
+                fraction1 = (double) (numerator1 / denominator1);
+                fraction2 = (double) (numerator2 / denominator2);
+            }
+
+            checkAnswer(fraction1, fraction2);
+            question += ("A = " + numerator1 + "/" + denominator1 + " or B = " + numerator2 + "/" + denominator2);
 
         } else if (levelNum >= 80 && levelNum < 100) {
             // phase 5 (mix of all 4 phases)
