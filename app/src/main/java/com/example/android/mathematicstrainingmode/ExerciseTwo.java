@@ -4,16 +4,13 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.Html;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.text.DecimalFormat;
 
 public class ExerciseTwo extends AppCompatActivity {
 
@@ -22,7 +19,6 @@ public class ExerciseTwo extends AppCompatActivity {
     final int totalSec = 60;
     private LinearLayout[] _sixtyOfALine = new LinearLayout[totalSec];
 
-    boolean isAbig;
     Thread thread;
 
     boolean isBackButtonPressed = false;
@@ -65,6 +61,19 @@ public class ExerciseTwo extends AppCompatActivity {
             public void run() {
 
                 // TODO use now the number pad and not the button a or b!
+
+                RelativeLayout butOne = findViewById(R.id.one);
+                butOne.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View view) {
+                        tvTime.setText(tvTime.getText() + "1");
+//                        startTime = System.currentTimeMillis() - 1000;
+//                        for (int i = 0; i < totalSec; i++) {
+//                            _sixtyOfALine[i].setVisibility(View.VISIBLE);
+//                        }
+                    }
+                });
 
 //                Button butA = findViewById(R.id.button_A);
 //                butA.setOnClickListener(new View.OnClickListener() {
@@ -140,53 +149,38 @@ public class ExerciseTwo extends AppCompatActivity {
 
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
-//    private String mathematicsQuestions(int levelNum) {
-//        String question = "Which is larger, ";
-//        double num;
-//        double min, max;
-//        int numerator1, numerator2;
-//        int denominator1,  denominator2;
-//        int minNumerator, maxNumerator;
-//
-//        if (levelNum >= 1 && levelNum <= 100) {
-//        // phase 2 (integers)
-//
-////            int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
-////            int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
-////            if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
-////            if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
-//
-//        min = levelNum;
-//        max = levelNum * 5 + 10;
-//        num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
-//        num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
-//        if (num1 == num2) {
-//            num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
-//            num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
-//            if (num1 == num2) {
-//                num2 -= min;
-//                num1 += 2;
-//            }
-//        }
-//
-//        checkAnswer(num);
-//
-//        DecimalFormat df = new DecimalFormat("###.#");
-//        question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
-//
-//        }
-//            return question;
-//    }
-//
-//    private boolean checkAnswer(double num) {
-//        if (num1 > num2) {
-//            isAbig = true;
-//            return true;
-//        } else {
-//            isAbig = false;
-//            return false;
-//        }
-//    }
+    private String mathematicsQuestions(int levelNum) {
+        String question = "";
+        double num;
+        double min, max;
+
+        if (levelNum >= 1 && levelNum <= 100) {
+            // phase 2 (integers)
+
+            min = levelNum;
+            max = levelNum * 5 + 15;
+            num = (int) (Math.random() * (max - min + 1) + min);
+
+            int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+            int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+
+            String neg1, neg2;
+            if (ranNegPosNum1 == 2) { neg1 = "-"; } else { neg1 = ""; }
+            if (ranNegPosNum2 == 2) { neg2 = "-"; } else { neg2 = ""; }
+
+            checkAnswer(num, ranNegPosNum1);
+            question = neg1 + "|" + neg2 + num + "| = ";
+        }
+
+        return question;
+    }
+
+    private double checkAnswer(double num, int ranNegPosSign1) {
+        Math.abs(num);
+        if (ranNegPosSign1 == 2) { num *= -1; }
+        System.out.println("answer = " + num);
+        return num;
+    }
 
     // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
 
