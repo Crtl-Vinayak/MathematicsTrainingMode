@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.DecimalFormat;
+
 public class ExerciseTwo extends AppCompatActivity {
 
     // TODO make the questions...
@@ -23,6 +25,9 @@ public class ExerciseTwo extends AppCompatActivity {
 
     boolean isBackButtonPressed = false;
     boolean isWrongAnswered = false;
+
+    String answer = "";
+    String userInput = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +55,19 @@ public class ExerciseTwo extends AppCompatActivity {
             line.addView(_sixtyOfALine[i]);
         }
 
+        final RelativeLayout butOne = findViewById(R.id.one);
+        final RelativeLayout butTwo = findViewById(R.id.two);
+        final RelativeLayout butThree = findViewById(R.id.three);
+        final RelativeLayout butFour = findViewById(R.id.four);
+        final RelativeLayout butFive = findViewById(R.id.five);
+        final RelativeLayout butSix = findViewById(R.id.six);
+        final RelativeLayout butSeven = findViewById(R.id.seven);
+        final RelativeLayout butEight = findViewById(R.id.eight);
+        final RelativeLayout butNine = findViewById(R.id.nine);
+        final RelativeLayout butZero = findViewById(R.id.zero);
+        final RelativeLayout butMinus = findViewById(R.id.minus);
+        final RelativeLayout butBackspace = findViewById(R.id.backspace);
+
         final TextView tvTime = findViewById(R.id.question);
         tvTime.setText(mathematicsQuestions(levelNum));
         final boolean[] isTimerDone = {false};
@@ -62,54 +80,180 @@ public class ExerciseTwo extends AppCompatActivity {
 
                 // TODO use now the number pad and not the button a or b!
 
-                RelativeLayout butOne = findViewById(R.id.one);
                 butOne.setOnClickListener(new View.OnClickListener() {
-
                     @Override
                     public void onClick(View view) {
+                        userInput += "1";
                         tvTime.setText(tvTime.getText() + "1");
-//                        startTime = System.currentTimeMillis() - 1000;
-//                        for (int i = 0; i < totalSec; i++) {
-//                            _sixtyOfALine[i].setVisibility(View.VISIBLE);
-//                        }
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
                     }
                 });
 
-//                Button butA = findViewById(R.id.button_A);
-//                butA.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        if (!isAbig) {
-//                            isWrongAnswered = true;
-//                            Intent intent = new Intent(ExerciseTwo.this, LevelSelectionExerciseOne.class);
-//                            startActivity(intent);
-//                        } else {
-//                            tvTime.setText(mathematicsQuestions(levelNum));
-//                        }
-//                        startTime = System.currentTimeMillis() - 1000;
-//                        for (int i = 0; i < totalSec; i++) {
-//                            _sixtyOfALine[i].setVisibility(View.VISIBLE);
-//                        }
-//                    }
-//                });
-//
-//                Button butB = findViewById(R.id.button_B);
-//                butB.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View view) {
-//                        if (isAbig) {
-//                            isWrongAnswered = true;
-//                            Intent intent = new Intent(ExerciseTwo.this, LevelSelectionExerciseOne.class);
-//                            startActivity(intent);
-//                        } else {
-//                            tvTime.setText(mathematicsQuestions(levelNum));
-//                        }
-//                        startTime = System.currentTimeMillis() - 1000;
-//                        for (int i = 0; i < totalSec; i++) {
-//                            _sixtyOfALine[i].setVisibility(View.VISIBLE);
-//                        }
-//                    }
-//                });
+                butTwo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "2";
+                        tvTime.setText(tvTime.getText() + "2");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butThree.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "3";
+                        tvTime.setText(tvTime.getText() + "3");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butFour.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "4";
+                        tvTime.setText(tvTime.getText() + "4");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butFive.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "5";
+                        tvTime.setText(tvTime.getText() + "5");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butSix.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "6";
+                        tvTime.setText(tvTime.getText() + "6");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butSeven.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "7";
+                        tvTime.setText(tvTime.getText() + "7");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butEight.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "8";
+                        tvTime.setText(tvTime.getText() + "8");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butNine.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "9";
+                        tvTime.setText(tvTime.getText() + "9");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butZero.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "0";
+                        tvTime.setText(tvTime.getText() + "0");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butMinus.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        userInput += "-";
+                        tvTime.setText(tvTime.getText() + "-");
+                        if (answer == userInput) {
+                            startTime = System.currentTimeMillis() - 1000;
+                            for (int i = 0; i < totalSec; i++) {
+                                _sixtyOfALine[i].setVisibility(View.VISIBLE);
+                            }
+                        }
+                        testUserInputAnswer();
+                    }
+                });
+
+                butBackspace.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (userInput.length() > 0) {
+                            userInput = userInput.substring(0, userInput.length() - 1);
+                            tvTime.setText(tvTime.getText().toString().substring(0, tvTime.getText().length() - 1));
+                        }
+                    }
+                });
 
                 while (!isTimerDone[0]) {
                     try {
@@ -147,11 +291,16 @@ public class ExerciseTwo extends AppCompatActivity {
         finish();
     }
 
+    private void testUserInputAnswer() {
+        System.out.println(userInput + " x " + answer);
+        System.out.println(userInput == answer);
+    }
+
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
     private String mathematicsQuestions(int levelNum) {
         String question = "";
-        double num;
+        int num;
         double min, max;
 
         if (levelNum >= 1 && levelNum <= 100) {
@@ -175,11 +324,11 @@ public class ExerciseTwo extends AppCompatActivity {
         return question;
     }
 
-    private double checkAnswer(double num, int ranNegPosSign1) {
+    private void checkAnswer(int num, int ranNegPosSign1) {
         Math.abs(num);
         if (ranNegPosSign1 == 2) { num *= -1; }
         System.out.println("answer = " + num);
-        return num;
+        answer = num + "";
     }
 
     // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
