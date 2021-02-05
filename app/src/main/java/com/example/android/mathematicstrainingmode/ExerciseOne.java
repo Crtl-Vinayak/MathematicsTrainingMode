@@ -250,11 +250,221 @@ public class ExerciseOne extends AppCompatActivity {
         } else if (levelNum >= 80 && levelNum < 100) {
             // phase 5 (mix of all 4 phases)
 
+            int choosePhase = (int) (Math.random() * 4 + 1);
+            System.out.println(choosePhase);
+
+            if (choosePhase == 1) {
+                // phase 1 (natural numbers)
+
+                min = levelNum;
+                max = levelNum * 5 + 1;
+                num1 = (int) (Math.random() * (max - min + 1) + min);
+                num2 = (int) (Math.random() * (max - min + 1) + min);
+                if (num1 == num2) {
+                    num1 = (int) (Math.random() * (max - min + 1) + min);
+                    num2 = (int) (Math.random() * (max - min + 1) + min);
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 1;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+
+                DecimalFormat df = new DecimalFormat("###.#");
+                question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+
+            } else if (choosePhase == 2) {
+                // phase 2 (integers)
+
+                int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+                int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+                if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+                if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
+
+                min = levelNum;
+                max = levelNum * 5 + 2;
+                num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
+                num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
+                if (num1 == num2) {
+                    num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
+                    num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 2;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+
+                DecimalFormat df = new DecimalFormat("###.#");
+                question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+
+            } else if (choosePhase == 3) {
+                // phase 3 (decimals)
+
+                int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+                int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+                if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+                if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
+
+                min = levelNum;
+                max = levelNum * 5 + 2;
+                num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+                num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
+
+                if (num1 == num2) {
+                    num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+                    num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 5;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+                question += ("A = " + num1 + " or B = " + num2);
+
+            } else {
+                // phase 4 (fractions)
+
+                minNumerator = levelNum - 79;
+                maxNumerator = levelNum - 79 + 10;
+
+                numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                if (denominator1 == 0) { denominator1++; }
+                if (denominator2 == 0) { denominator2++; }
+                double fraction1 = (double) (numerator1 / denominator1);
+                double fraction2 = (double) (numerator2 / denominator2);
+
+                while (fraction1 == fraction2) {
+                    numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    if (denominator1 == 0) { denominator1++; }
+                    if (denominator2 == 0) { denominator2++; }
+                    fraction1 = (double) (numerator1 / denominator1);
+                    fraction2 = (double) (numerator2 / denominator2);
+                }
+
+                checkAnswer(fraction1, fraction2);
+                question += ("A = " + numerator1 + "/" + denominator1 + " or B = " + numerator2 + "/" + denominator2);
+
+            }
+
         } else if (levelNum == 100) {
             // phase 6 (final phase - all phases but on max difficulty)
 
-        }
+            int choosePhase = (int) (Math.random() * 4 + 1);
+            System.out.println(choosePhase);
 
+            if (choosePhase == 1) {
+                // phase 1 (natural numbers)
+
+                min = levelNum;
+                max = levelNum * 10 + 1;
+                num1 = (int) (Math.random() * (max - min + 1) + min);
+                num2 = (int) (Math.random() * (max - min + 1) + min);
+                if (num1 == num2) {
+                    num1 = (int) (Math.random() * (max - min + 1) + min);
+                    num2 = (int) (Math.random() * (max - min + 1) + min);
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 1;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+
+                DecimalFormat df = new DecimalFormat("###.#");
+                question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+
+            } else if (choosePhase == 2) {
+                // phase 2 (integers)
+
+                int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+                int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+                if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+                if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
+
+                min = levelNum;
+                max = levelNum * 10 + 2;
+                num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
+                num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
+                if (num1 == num2) {
+                    num1 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum1);
+                    num2 = (int) ((Math.random() * (max - min + 1) + min) * ranNegPosNum2);
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 2;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+
+                DecimalFormat df = new DecimalFormat("###.#");
+                question += ("A = " + df.format(num1) + " or B = " + df.format(num2));
+
+            } else if (choosePhase == 3) {
+                // phase 3 (decimals)
+
+                int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
+                int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+                if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; }
+                if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; }
+
+                min = levelNum;
+                max = levelNum * 10 + 2;
+                num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+                num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
+
+                if (num1 == num2) {
+                    num1 = (Math.random() * (max - min + 1) + min) * ranNegPosNum1;
+                    num2 = (Math.random() * (max - min + 1) + min) * ranNegPosNum2;
+                    if (num1 == num2) {
+                        num2 -= min;
+                        num1 += 5;
+                    }
+                }
+
+                checkAnswer(num1, num2);
+                question += ("A = " + num1 + " or B = " + num2);
+
+            } else {
+                // phase 4 (fractions)
+
+                minNumerator = levelNum - 99;
+                maxNumerator = levelNum - 99 + 15;
+
+                numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                if (denominator1 == 0) { denominator1++; }
+                if (denominator2 == 0) { denominator2++; }
+                double fraction1 = (double) (numerator1 / denominator1);
+                double fraction2 = (double) (numerator2 / denominator2);
+
+                while (fraction1 == fraction2) {
+                    numerator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    numerator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    denominator1 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    denominator2 = (int) (Math.random() * (maxNumerator - minNumerator + 1) + minNumerator);
+                    if (denominator1 == 0) { denominator1++; }
+                    if (denominator2 == 0) { denominator2++; }
+                    fraction1 = (double) (numerator1 / denominator1);
+                    fraction2 = (double) (numerator2 / denominator2);
+                }
+
+                checkAnswer(fraction1, fraction2);
+                question += ("A = " + numerator1 + "/" + denominator1 + " or B = " + numerator2 + "/" + denominator2);
+
+            }
+        }
         return question;
     }
 
