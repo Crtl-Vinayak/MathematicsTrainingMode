@@ -399,23 +399,32 @@ public class ExerciseThree extends AppCompatActivity {
 
             int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
             int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+            if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; num1 *= ranNegPosNum1; }
+            if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; num2 *= ranNegPosNum2; }
 
+            checkAnswer(num1, num2);
+            String part1, part2;
 
-            String neg1, neg2;
-            if (ranNegPosNum1 == 2) { neg1 = "(-"; } else { neg1 = ""; }
-            if (ranNegPosNum2 == 2) { neg2 = "(-"; } else { neg2 = ""; }
+            if (ranNegPosNum1 == -1) {
+                part1 = "(" + num1 + ")";
+            } else {
+                part1 = "" + num1;
+            }
 
-//            checkAnswer(num, ranNegPosNum1);
-//            question = neg1 + "|" + neg2 + num + "| = ";
+            if (ranNegPosNum2 == -1) {
+                part2 = "(" + num2 + ")";
+            } else {
+                part2 = "" + num2;
+            }
+
+            question = part1 + " + " + part2 + " = ";
         }
 
         return question;
     }
 
-    private void checkAnswer(int num, int ranNegPosSign1) {
-        Math.abs(num);
-        if (ranNegPosSign1 == 2) { num *= -1; }
-        answer = "" + num;
+    private void checkAnswer(int num1, int num2) {
+        answer = "" + (num1 + num2);
     }
 
     // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
