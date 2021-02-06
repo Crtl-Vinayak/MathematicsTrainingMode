@@ -13,10 +13,6 @@ import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.Lev
 import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseFour;
 import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseFive;
 import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseSix;
-import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseSeven;
-import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseEight;
-import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseNine;
-import com.example.android.mathematicstrainingmode.LevelSelectionExerciseNum.LevelSelectionExerciseTen;
 
 public class TrainingModeBeginScreen extends AppCompatActivity {
 
@@ -71,34 +67,6 @@ public class TrainingModeBeginScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseSix.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.button7).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseSeven.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.button8).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseEight.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.button9).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseNine.class);
-                startActivity(intent);
-            }
-        });
-        findViewById(R.id.button10).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(TrainingModeBeginScreen.this, LevelSelectionExerciseTen.class);
                 startActivity(intent);
             }
         });
