@@ -42,7 +42,7 @@ public class ExerciseThree extends AppCompatActivity {
 
         final int levelNum = getIntent().getIntExtra("levelnum", 1);
         TextView actionbarTitle = findViewById(R.id.action_bar_title_exercise_one);
-        actionbarTitle.setText(getApplicationContext().getString(R.string.assigning_numbers_their_places) + ". Level: " + levelNum + " / " + 100);
+        actionbarTitle.setText(getApplicationContext().getString(R.string.added_signed_numbers) + ". Level: " + levelNum + " / " + 100);
 
         //line code
         LinearLayout line = findViewById(R.id.exercise_one_line);
@@ -383,8 +383,6 @@ public class ExerciseThree extends AppCompatActivity {
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
     private String mathematicsQuestions(int levelNum) {
-
-        // TODO make exercise_three questions...
 
         String question = "";
         int num1, num2;

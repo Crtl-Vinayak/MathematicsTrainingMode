@@ -42,7 +42,7 @@ public class ExerciseTwo extends AppCompatActivity {
 
         final int levelNum = getIntent().getIntExtra("levelnum", 1);
         TextView actionbarTitle = findViewById(R.id.action_bar_title_exercise_one);
-        actionbarTitle.setText(getApplicationContext().getString(R.string.assigning_numbers_their_places) + ". Level: " + levelNum + " / " + 100);
+        actionbarTitle.setText(getApplicationContext().getString(R.string.reading_and_writing_absolute_value) + ". Level: " + levelNum + " / " + 100);
 
         //line code
         LinearLayout line = findViewById(R.id.exercise_one_line);
