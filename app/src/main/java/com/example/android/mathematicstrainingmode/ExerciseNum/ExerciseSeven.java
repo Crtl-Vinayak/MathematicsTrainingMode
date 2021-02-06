@@ -42,7 +42,7 @@ public class ExerciseSeven extends AppCompatActivity {
 
         final int levelNum = getIntent().getIntExtra("levelnum", 1);
         TextView actionbarTitle = findViewById(R.id.action_bar_title_exercise_one);
-        actionbarTitle.setText(getApplicationContext().getString(R.string.assigning_numbers_their_places) + ". Level: " + levelNum + " / " + 100);
+        actionbarTitle.setText(getApplicationContext().getString(R.string.grouping_symbols) + ". Level: " + levelNum + " / " + 100);
 
         //line code
         LinearLayout line = findViewById(R.id.exercise_one_line);
@@ -383,35 +383,50 @@ public class ExerciseSeven extends AppCompatActivity {
     // --------------------------------------------------------- <MAKE MATHEMATICAL QUESTIONS! (BEGINS) -------------------------------------------------------
 
     private String mathematicsQuestions(int levelNum) {
+
         String question = "";
-        int num;
+        int num1, num2, num3;
         double min, max;
 
         if (levelNum >= 1 && levelNum <= 100) {
-            // phase 2 (integers)
 
             min = levelNum;
-            max = levelNum * 5 + 15;
-            num = (int) (Math.random() * (max - min + 1) + min);
+            max = levelNum * 2 + 2;
+            num1 = (int) (Math.random() * (max - min + 1) + min);
+            num2 = (int) (Math.random() * (max - min + 1) + min);
+            num3 = (int) (Math.random() * (max - min + 1) + min);
 
             int ranNegPosNum1 = (int) (Math.random() * 2 + 1);
             int ranNegPosNum2 = (int) (Math.random() * 2 + 1);
+            int ranNegPosNum3 = (int) (Math.random() * 2 + 1);
+            if (ranNegPosNum1 == 2) { ranNegPosNum1 = -1; num1 *= ranNegPosNum1; }
+            if (ranNegPosNum2 == 2) { ranNegPosNum2 = -1; num2 *= ranNegPosNum2; }
+            if (ranNegPosNum3 == 2) { ranNegPosNum3 = -1; num3 *= ranNegPosNum3; }
 
-            String neg1, neg2;
-            if (ranNegPosNum1 == 2) { neg1 = "-"; } else { neg1 = ""; }
-            if (ranNegPosNum2 == 2) { neg2 = "-"; } else { neg2 = ""; }
+            int chooseOneOf4Operators = (int) (Math.random() * 4 + 1);
+            if (chooseOneOf4Operators == 1) {
 
-            checkAnswer(num, ranNegPosNum1);
-            question = neg1 + "|" + neg2 + num + "| = ";
+            } else if (chooseOneOf4Operators == 2) {
+
+            } else if (chooseOneOf4Operators == 3) {
+
+            } else if (chooseOneOf4Operators == 4) {
+
+            }
+
+            checkAnswer(num1);
+            String part1, part2;
+
+            part1 = "(" + (num1 * num2) + ")";
+            part2 = "(" + num2 + ")";
+            question = part1 + " / " + part2 + " = ";
         }
 
         return question;
     }
 
-    private void checkAnswer(int num, int ranNegPosSign1) {
-        Math.abs(num);
-        if (ranNegPosSign1 == 2) { num *= -1; }
-        answer = "" + num;
+    private void checkAnswer(int num1) {
+        answer = "" + num1;
     }
 
     // --------------------------------------------------------- <<MAKE MATHEMATICAL QUESTIONS! (ENDS) -------------------------------------------------------
